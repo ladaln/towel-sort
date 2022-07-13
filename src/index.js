@@ -1,8 +1,12 @@
-
-// You should implement your task here.
-
 module.exports = function towelSort (matrix) {
-   matrix.reduce((acc, cur, i) => {
-    cur.sort((a, b) => !(i & 1) ? a - b : b - a).map(e => acc.push(e));
-    return acc;
-  }, [])
+    let modifiedArr = [];
+    if (matrix) {
+        matrix.forEach((item, i) => {
+            if (i % 2) {
+                item.reverse();
+            }
+            modifiedArr = modifiedArr.concat(item);
+        });
+    }
+    return modifiedArr;
+}
